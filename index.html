@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Pizza</title>
+     <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.48.0/min/vs/loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+</head>
+    <style>
+        #container { height: 500px; }
+    </style>
+<body>
+    <div id="container"></div>
+    <button id="beautifyButton">Beautify SQL</button>
+
+    <script>
+        require.config({
+            paths: {
+                'sqlFormatter': 'https://cdn.jsdelivr.net/npm/sql-formatter/dist/sql-formatter.min',
+                'vs': 'https://cdn.jsdelivr.net/npm/monaco-editor@0.48.0/min/vs'
+            }
+        });
+        // require.config({ paths: { 'vs': 'https://cdn.jsdelivr.net/npm/monaco-editor@0.48.0/min/vs' }});
+
+        require(['sqlFormatter', 'vs/editor/editor.main'], function(sqlFormatter) {
+            // Use the format function from sqlFormatter
+            var editor = monaco.editor.create(document.getElementById('container'), {
+                value: 'SELECT * FROM table WHERE a = 1;', // Initial content for demonstration
+                language: 'sql',
+                automaticLayout: true
+            });
+            // var formattedSql = sqlFormatter.format('SELECT * FROM tbl', { language: 'mysql' });
+            document.getElementById('beautifyButton').addEventListener('click', function () {
+                var content = editor.getValue();
+                var beautifiedContent = sqlFormatter.format(content);
+                editor.setValue(beautifiedContent);
+            });
+
+            // Display the formatted SQL in the result div
+            // document.getElementById('result').innerText = formattedSql;
+        });
+    </script>
+</body>
+</html>
