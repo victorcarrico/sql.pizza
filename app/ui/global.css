@@ -1,0 +1,27 @@
+/* styles/globals.css */
+.main-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.editor-container {
+  height: 100%;
+}
+
+.button-container {
+  position: absolute;
+  bottom: 10vh;
+  right: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+  height: 50px; /* Height of the button area */
+  width: 100vw;
+}
+
+.button-container .p-button {
+  margin-right: 10px;
+}
