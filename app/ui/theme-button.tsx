@@ -2,25 +2,22 @@ import { Button } from 'primereact/button';
 import { useState, useEffect } from 'react';
 
 const MODE_ICON = {
-    'dark': 'pi pi-sun',
-    'light': 'pi pi-moon'
+  'dark': 'pi pi-sun',
+  'light': 'pi pi-moon'
 }
 
-export default function ThemeButton({ onModeChange }) {
-    const [mode, setMode] = useState('light');
+export default function ThemeButton({ onModeChange, theme }) {
+  const [mode, setMode] = useState(theme);
 
-    useEffect(() => {
-        onModeChange(mode);
-    }, [mode, onModeChange]);
+  useEffect(() => {
+    onModeChange(mode);
+  }, [mode, onModeChange]);
 
-    function switchThemeMode(){
-        if (mode === 'light') {
-            setMode('dark');
-        } else {
-            setMode('light');
-        }
-    }
-    return (
-        <Button icon={MODE_ICON[mode]} className="p-button-warning" onClick={switchThemeMode} />
-    )
+  function switchMode(){
+    const newMode = mode === 'light' ? 'dark' : 'light';
+    setMode(newMode);
+  }
+  return (
+    <Button icon={MODE_ICON[mode]} onClick={switchMode} />
+  )
 }
