@@ -47,13 +47,13 @@ export default function Pizza() {
     if (!monacoRef.current) return;
 
     if (mode === 'light') {
-      import('monaco-themes/themes/Github Light.json')
+      import('../src/monaco-themes/Github Light.json')
       .then(data => {
         monacoRef.current.editor.defineTheme('github-light', data);
       })
       .then(_ => monacoRef.current.editor.setTheme('github-light'))
     } else {
-      import('monaco-themes/themes/Github Dark.json')
+      import('../src/monaco-themes/Github Dark.json')
       .then(data => {
         monacoRef.current.editor.defineTheme('github-dark', data);
       })
