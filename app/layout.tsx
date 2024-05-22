@@ -1,7 +1,9 @@
 import './ui/global.css';
 import 'primeicons/primeicons.css';
-import 'primereact/resources/themes/lara-dark-teal/theme.css'
+import 'primereact/resources/themes/lara-dark-teal/theme.css';
 import { Metadata } from 'next';
+import { GoogleAnalytics } from "@next/third-parties/google";
+
 
 export const metadata: Metadata = {
   title: 'SQL.pizza - Formatter',
@@ -19,6 +21,7 @@ export default function RootLayout({
       <html lang="en">
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <body>{children}</body>
+        <GoogleAnalytics gaId="G-4KK2N589L8" />
       </html>
     )
   }

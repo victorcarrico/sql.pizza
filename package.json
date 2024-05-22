@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@monaco-editor/react": "^4.6.0",
+    "@next/third-parties": "^14.0.5-canary.59",
     "aws-amplify": "^6.3.2",
     "monaco-themes": "^0.4.4",
     "next": "^14.2.3",
