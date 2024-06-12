@@ -44,6 +44,7 @@ export default function Pizza() {
   }
 
   function switchTheme(mode) {
+    // TODO: This function hurts my eyes
     if (!monacoRef.current) return;
 
     if (mode === 'light') {

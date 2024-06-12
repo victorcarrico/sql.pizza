@@ -1,6 +1,8 @@
 import { Button } from 'primereact/button';
 import { useState, useEffect } from 'react';
 
+// TODO: Do we really this component?
+
 const MODE_ICON = {
   'dark': 'pi pi-sun',
   'light': 'pi pi-moon'
