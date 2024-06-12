@@ -1,9 +1,7 @@
 # SQL.PIZZA
-
 Simple SQL beautifier.
 
 ## Overview
-
 This is a Next.js project using monaco editor as the main dependency.
 There are some improvements to be done with regards to project and components structure, as well as some TODOs around the code to improve readability.
 
