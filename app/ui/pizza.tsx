@@ -39,6 +39,10 @@ export default function Pizza() {
     editorRef.current.setValue(format(editorRef.current.getValue()));
   }
 
+  function handleBuySlice() {
+    window.open('https://www.buymeacoffee.com/vcarrico', '_blank');
+  }
+
   function copyToClipboard() {
     navigator.clipboard.writeText(editorRef.current.getValue());
   }
@@ -88,6 +92,7 @@ export default function Pizza() {
         <Button label="Format" onClick={beautifySQL} />
         <Button icon="pi pi-copy" onClick={copyToClipboard} />
         <ThemeButton onModeChange={switchTheme} theme={theme} />
+        <Button label="🍕 Buy me a slice" onClick={handleBuySlice} />
       </div>
     </div>
   );
